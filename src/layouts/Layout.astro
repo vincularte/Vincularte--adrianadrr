@@ -1,0 +1,47 @@
+---
+;
+// Supports weights 100-900
+import '@fontsource-variable/grandstander';
+import Header from '../components/Header.astro';
+import Button from '../components/Button.astro';
+import Footer from '../components/Footer.astro';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+	</head>
+	<body>
+		
+		<Header />
+		<Button/>
+		
+		<slot />
+		<Footer />
+	
+	</body>
+</html>
+<style is:global>
+	html {
+		font-family: 'Grandstander Variable', system-ui, sans-serif;
+		
+	}
+	body{
+		background: radial-gradient(60% 120% at 50% 50%, hsla(0, 0%, 100%, 0) 0, rgba(252, 205, 238, .5) 100%);
+		flex-direction: column;
+		display: flex;
+	}
+	
+</style>
